@@ -1,0 +1,29 @@
+{
+  "name": "coder-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taro99/coder-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taro99/coder-hub/issues"
+  },
+  "homepage": "https://github.com/taro99/coder-hub#readme",
+  "devDependencies": {
+    "koa2": "^2.0.0-alpha.7",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2"
+  }
+}
