@@ -7,7 +7,6 @@ const service = require('../service/user.service')
 
 class UserController {
   async create(ctx, next) {
-    console.log(ctx)
     const user = ctx.request.body
     const result = await service.create(user)
     ctx.body = result

@@ -6,6 +6,8 @@ const app = require('./app')
 
 const config = require('./app/config')
 
+require('./app/database')
+
 app.listen(config.PORT, () => {
   console.log(`server runing on  ${config.PORT}`)
 })
