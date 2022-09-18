@@ -4,6 +4,7 @@
  */
 
 const service = require('../service/user.service')
+const crypto = require('crypto')
 
 class UserController {
   async create(ctx, next) {
