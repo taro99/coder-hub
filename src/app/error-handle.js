@@ -1,3 +1,7 @@
+/*
+ * @Author: kcons 193791789@qq.com
+ * @Date: 2022-09-13 20:35:58
+ */
 const errorType = require('../constants/error-types')
 
 const errorHandler = (error, ctx) => {
@@ -10,6 +14,14 @@ const errorHandler = (error, ctx) => {
     case errorType.USER_ALRAEDY_EXISTS:
       status = 409
       message = '用户名存在'
+      break
+    case errorType.USER_NOT_EXISTS:
+      status = 400
+      message = '用户名不存在'
+      break
+    case errorType.PASSWORD_IS_ERROR:
+      status = 400
+      message = '用户名或密码错误'
       break
     default:
       status = 404
