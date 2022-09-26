@@ -23,6 +23,10 @@ const errorHandler = (error, ctx) => {
       status = 400
       message = '用户名或密码错误'
       break
+    case errorType.AUTHORIZATION:
+      status = 401
+      message = '用户登录未授权'
+      break
     default:
       status = 404
       message = 'NOT FOUND'

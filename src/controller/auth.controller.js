@@ -7,7 +7,6 @@ const { PRIVATE_KEY } = require('../app/config')
 
 class AuthController {
   async login(ctx, next) {
-    console.log(ctx.user)
     const { id, userName } = ctx.user
 
     const token = jwt.sign({ id, userName }, PRIVATE_KEY, {
@@ -20,6 +19,9 @@ class AuthController {
       userName,
       token,
     }
+  }
+  async success(ctx, next) {
+    ctx.body = '授权成功~'
   }
 }
 module.exports = new AuthController()
