@@ -27,6 +27,11 @@ const errorHandler = (error, ctx) => {
       status = 401
       message = '用户登录未授权'
       break
+    case errorType.PERMISSION:
+      status = 401
+      message = '当前用户没有修改权限~'
+      break
+
     default:
       status = 404
       message = 'NOT FOUND'

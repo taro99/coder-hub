@@ -15,7 +15,7 @@ class MomentController {
   // 查询单条数据
   async detail(ctx, next) {
     //  1. 获取单个动态数据
-    const momentId = ctx.params.momentId
+    const { momentId } = ctx.params
     const result = await momentService.getMomentById(momentId)
     ctx.body = result
   }
@@ -23,6 +23,12 @@ class MomentController {
   async list(ctx, next) {
     const { offset, pageSize } = ctx.query
     const result = await momentService.getMomentByList(offset * 10, pageSize)
+    ctx.body = result
+  }
+  async update(ctx, next) {
+    const { momentId } = ctx.params
+    const { content } = ctx.request.body
+    const result = await momentService.update(content, momentId)
     ctx.body = result
   }
 }
