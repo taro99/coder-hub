@@ -29,7 +29,7 @@ const errorHandler = (error, ctx) => {
       break
     case errorType.PERMISSION:
       status = 401
-      message = '当前用户没有修改权限~'
+      message = '当前用户没有权限~'
       break
 
     default:

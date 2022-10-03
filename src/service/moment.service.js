@@ -25,6 +25,7 @@ class MomentService {
     const [result] = await connections.execute(statement, [userId])
     return result[0]
   }
+
   async getMomentByList(offset, pageSize) {
     const statement = `SELECT 
     m.id id,
@@ -37,9 +38,16 @@ class MomentService {
     const [result] = await connections.execute(statement, [offset, pageSize])
     return result
   }
+
   async update(content, momentId) {
     const statement = `UPDATE moment SET content = ? WHERE id = ?`
     const [result] = await connections.execute(statement, [content, momentId])
+    return result
+  }
+
+  async remove(momentId) {
+    const statement = `DELETE from moment WHERE id = ?`
+    const [result] = await connections.execute(statement, [momentId])
     return result
   }
 }
