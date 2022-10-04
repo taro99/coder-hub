@@ -8,8 +8,7 @@ const { HOST, PORT } = require('../app/config')
 
 class fileController {
   async saveAvatarInfo(ctx, next) {
-    console.log('111')
-    console.log(ctx.req.file)
+    // console.log(ctx.req.file)
     // 1. 获取图像相关的信息
     const { filename, mimetype, size } = ctx.req.file
     const { id } = ctx.user
@@ -20,6 +19,12 @@ class fileController {
     await userService.updateAvatarUrlById(avatarUrl, id)
     // 返回结果
     ctx.body = { iCode: 200, strMsg: 'success' }
+  }
+  async savePictureInfo(ctx, next) {
+    const files = ctx.request.files
+    const { id } = ctx.user
+    for (let item of files) {
+    }
   }
 }
 module.exports = new fileController()
